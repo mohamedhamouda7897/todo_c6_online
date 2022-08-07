@@ -1,6 +1,7 @@
 import 'package:calendar_timeline/calendar_timeline.dart';
 import 'package:flutter/material.dart';
 import 'package:todo_c6_online/modules/tasks/task_item.dart';
+import 'package:todo_c6_online/shared/styles/my_theme.dart';
 
 class TasksTab extends StatelessWidget {
   const TasksTab({Key? key}) : super(key: key);
@@ -16,10 +17,10 @@ class TasksTab extends StatelessWidget {
             lastDate: DateTime.now().add(Duration(days: 365)),
             onDateSelected: (date) => print(date),
             leftMargin: 20,
-            monthColor: Colors.black,
-            dayColor: Colors.black,
+            monthColor: MyThemeData.BlackColor,//(dark mode change) (if)
+            dayColor: MyThemeData.BlackColor,//(dark mode change) (if)
             activeDayColor: Theme.of(context).primaryColor,
-            activeBackgroundDayColor: Colors.white,
+            activeBackgroundDayColor: MyThemeData.WhiteColor,//(dark mode change) (if)
             dotsColor: Theme.of(context).primaryColor,
             selectableDayPredicate: (date) => true,
             locale: 'en',

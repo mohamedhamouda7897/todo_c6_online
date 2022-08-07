@@ -19,6 +19,7 @@ class MyApp extends StatelessWidget {
       },
       debugShowCheckedModeBanner: false,
       theme: MyThemeData.lightTheme,
+      darkTheme:MyThemeData.DarkTheme ,
       themeMode: ThemeMode.light,
     );
   }

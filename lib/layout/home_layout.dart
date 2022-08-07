@@ -20,7 +20,7 @@ class _HomeLayoutState extends State<HomeLayout> {
       appBar: AppBar(
         title: Text(
           'Route TODO',
-          style: Theme.of(context).textTheme.headline1,
+          style: Theme.of(context).textTheme.headline1,textAlign: TextAlign.left,
         ),
       ),
       body: tabs[currentIndex],
@@ -45,7 +45,7 @@ class _HomeLayoutState extends State<HomeLayout> {
       floatingActionButton: FloatingActionButton(
         shape: StadiumBorder(
             side: BorderSide(
-          color: Colors.white,
+          color: Colors.white,//change Dark mode (if)
           width: 4,
         )),
         child: Icon(Icons.add),
