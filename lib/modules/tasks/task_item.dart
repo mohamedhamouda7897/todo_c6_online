@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:todo_c6_online/models/task_model.dart';
 import 'package:todo_c6_online/shared/styles/my_theme.dart';
 
+
 class TaskItem extends StatelessWidget {
-  const TaskItem({Key? key}) : super(key: key);
+  TaskModel taskModel;
+
+  TaskItem(this.taskModel);
 
   @override
   Widget build(BuildContext context) {
@@ -29,9 +33,20 @@ class TaskItem extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Task Title',style: TextStyle(fontSize: 25,
-                color: Color(0xFF5D9CEC),
-                fontWeight: FontWeight.w400,),
+
+                taskModel.title,
+                style: Theme.of(context).textTheme.subtitle1,
+              ),
+              Text(
+                taskModel.description,
+                style: Theme.of(context)
+                    .textTheme
+                    .headline2
+                    ?.copyWith(fontSize: 12),
+
+              
+               ),
+
 
               ),
               Row(

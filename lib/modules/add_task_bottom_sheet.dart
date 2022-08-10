@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:todo_c6_online/models/task_model.dart';
+
+import '../shared/components/components.dart';
+import '../utils/add_task_firebase.dart';
 
 class AddTaskBottomSheet extends StatefulWidget {
   const AddTaskBottomSheet({Key? key}) : super(key: key);
@@ -10,6 +14,8 @@ class AddTaskBottomSheet extends StatefulWidget {
 class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
   var selectedDate = DateTime.now();
   var formKey = GlobalKey<FormState>();
+  String title = '';
+  String description = '';
 
   @override
   Widget build(BuildContext context) {
@@ -34,6 +40,9 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
                   children: [
                     TextFormField(
                       decoration: InputDecoration(labelText: 'Title'),
+                      onChanged: (text) {
+                        title = text;
+                      },
                       validator: (text) {
                         if (text == null || text.isEmpty) {
                           return 'Please enter task title';
@@ -44,7 +53,12 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
                     TextFormField(
                       maxLines: 4,
                       minLines: 4,
-                      decoration: InputDecoration(labelText: 'Description',),
+
+                      onChanged: (text) {
+                        description = text;
+                      },
+                      decoration: InputDecoration(labelText: 'Description'),
+
                       validator: (text) {
                         if (text == null || text.isEmpty) {
                           return 'Please enter task description';
@@ -82,6 +96,22 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
                   if (formKey.currentState!.validate()) {
                     // local database /// mobile
                     // remote database  // online
+                    TaskModel tas = TaskModel(
+                        title: title,
+                        description: description,
+                        datetime: DateUtils.dateOnly(selectedDate)
+                            .microsecondsSinceEpoch);
+                    showLoading(context, 'Loading...');
+                    addTaskFromFireBase(tas).then((value) {
+                      hideLoadingDialog(context);
+                      showMessage(context, 'Added Successfully ', 'Ok', () {
+                        Navigator.pop(context);
+                      });
+                      Navigator.pop(context); // close bottom sheet
+                    }).catchError((e) {
+                      print(' error route $e');
+                      hideLoadingDialog(context);
+                    });
                   }
                 },
                 child: Text('Add Task'),
