@@ -1,0 +1,9 @@
+{
+    "add_new_task": "اضافه مهمه جديده",
+    "title": "عنوان مهمتك",
+    "description": "وصف مهمتك",
+    "select_time": "اختيار الوقت",
+    "add_task": "اضافه المهمه",
+    "please_enter_task_title": "من فضلك ادخل عنوان مهمتك",
+    "please_enter_task_description": "من فضلك اخل تفاصيل مهمتك"
+}

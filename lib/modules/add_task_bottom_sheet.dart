@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class AddTaskBottomSheet extends StatefulWidget {
   const AddTaskBottomSheet({Key? key}) : super(key: key);
@@ -21,7 +22,7 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Text(
-                'Add New Task',
+                AppLocalizations.of(context)!.add_new_task,
                 textAlign: TextAlign.center,
                 style: Theme.of(context)
                     .textTheme
@@ -33,10 +34,10 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
                 child: Column(
                   children: [
                     TextFormField(
-                      decoration: InputDecoration(labelText: 'Title'),
+                      decoration: InputDecoration(labelText: AppLocalizations.of(context)!.title),
                       validator: (text) {
                         if (text == null || text.isEmpty) {
-                          return 'Please enter task title';
+                          return AppLocalizations.of(context)!.please_enter_task_title;
                         }
                         return null;
                       },
@@ -44,10 +45,10 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
                     TextFormField(
                       maxLines: 4,
                       minLines: 4,
-                      decoration: InputDecoration(labelText: 'Description',),
+                      decoration: InputDecoration(labelText: AppLocalizations.of(context)!.description,),
                       validator: (text) {
                         if (text == null || text.isEmpty) {
-                          return 'Please enter task description';
+                          return AppLocalizations.of(context)!.please_enter_task_description;
                         }
                         return null;
                       },
@@ -59,7 +60,7 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
                 height: 12,
               ),
               Text(
-                'Select Time',style:Theme.of(context).textTheme.headline2?.copyWith(fontSize: 17) ,
+                AppLocalizations.of(context)!.select_time,style:Theme.of(context).textTheme.headline2?.copyWith(fontSize: 17) ,
                 textAlign: TextAlign.start,
               ),
               SizedBox(
@@ -84,7 +85,7 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
                     // remote database  // online
                   }
                 },
-                child: Text('Add Task'),
+                child: Text(AppLocalizations.of(context)!.add_task),
               ),
             ],
           ),

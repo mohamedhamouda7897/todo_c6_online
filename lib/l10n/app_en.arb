@@ -1,0 +1,9 @@
+{
+    "add_new_task": "Add new task",
+    "title": "Title",
+    "description": "Description",
+    "select_time": "Select time",
+    "add_task": "Add task",
+    "please_enter_task_title": "Please enter task title",
+    "please_enter_task_description": "Please enter task description"
+}
