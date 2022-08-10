@@ -32,7 +32,7 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
                 style: Theme.of(context)
                     .textTheme
                     .headline2
-                    ?.copyWith(color: Colors.black),
+
               ),
               Form(
                 key: formKey,
@@ -53,10 +53,12 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
                     TextFormField(
                       maxLines: 4,
                       minLines: 4,
+
                       onChanged: (text) {
                         description = text;
                       },
                       decoration: InputDecoration(labelText: 'Description'),
+
                       validator: (text) {
                         if (text == null || text.isEmpty) {
                           return 'Please enter task description';
@@ -71,7 +73,7 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
                 height: 12,
               ),
               Text(
-                'Select Time',
+                'Select Time',style:Theme.of(context).textTheme.headline2?.copyWith(fontSize: 17) ,
                 textAlign: TextAlign.start,
               ),
               SizedBox(
@@ -82,7 +84,7 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
                   OpenDatePicker();
                 },
                 child: Text(
-                  '${selectedDate.year} - ${selectedDate.month} - ${selectedDate.day}',
+                  '${selectedDate.year} - ${selectedDate.month} - ${selectedDate.day}',style:Theme.of(context).textTheme.headline2?.copyWith(fontSize: 17) ,
                   textAlign: TextAlign.center,
                 ),
               ),
