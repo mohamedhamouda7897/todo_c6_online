@@ -26,18 +26,36 @@ hideLoadingDialog(BuildContext context) {
   Navigator.pop(context);
 }
 
-showMessage(BuildContext context, String message, String actionName,
-    VoidCallback actionCallBack,
-    {bool isCancelable = true}) {
+showMessage(
+  BuildContext context,
+  String message,
+  String actionName,
+  VoidCallback actionCallBack, {
+  bool isCancelable = true,
+  String? NegActionName,
+  VoidCallback? NegActionCallBack,
+}) {
+  List<Widget> actions = [
+    TextButton(
+        onPressed: () {
+          actionCallBack();
+        },
+        child: Text(actionName)),
+  ];
+  if (NegActionName != null) {
+    actions.add(TextButton(
+        onPressed: () {
+          if (NegActionCallBack != null) NegActionCallBack();
+        },
+        child: Text(NegActionName)));
+  }
   showDialog(
       context: context,
       barrierDismissible: isCancelable,
       builder: (context) {
         return AlertDialog(
           content: Text(message),
-          actions: [
-            TextButton(onPressed: actionCallBack, child: Text(actionName))
-          ],
+          actions: actions,
         );
       });
 }

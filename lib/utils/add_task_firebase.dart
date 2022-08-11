@@ -17,8 +17,12 @@ Future<void> addTaskFromFireBase(TaskModel task) {
   var doc = TypeCollection.doc();
   task.id = doc.id;
   return doc.set(task);
+}
 
-  // id titile description isdone date
+Future<void> deleteTaskFromFireStore(TaskModel task) {
+  // var deletedTask =getTasksFromFireStore();
+  // deletedTask.doc(task.id).delete();
+  return getTasksFromFireStore().doc(task.id).delete();
 }
 
 Future<QuerySnapshot<TaskModel>> getTasksFromFirebase(DateTime dateTime) {
