@@ -8,6 +8,8 @@ class MyThemeData {
   static Color WhiteColor = Color(0xFFFFFFFF);
   static Color BlackColor = Color(0xF9000000);
   static Color DarkOnprimaryColor = Color(0xFF081231);
+  static Color selectedColor=Colors.red;
+  static Color unselectedColor=Colors.black;
   static final ThemeData lightTheme = ThemeData(
     primaryColor: primaryColor,
     scaffoldBackgroundColor: OnprimaryColor,
@@ -24,6 +26,11 @@ class MyThemeData {
       ),
       headline2: TextStyle(
         fontSize: 25,
+        color:BlackColor ,
+        fontWeight: FontWeight.bold,//text Add New Task
+      ),
+      headline4: TextStyle(
+        fontSize: 20,
         color:BlackColor ,
         fontWeight: FontWeight.bold,//text Add New Task
       ),

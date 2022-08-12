@@ -1,0 +1,22 @@
+{
+    "title": "العنوان",
+    "description": "الوصف",
+    "select_time": "اختيار الوقت",
+    "add_task": "اضافه مهمتك",
+    "language": "اللغه",
+    "theme": "الموضوعات",
+    "arabic": "العربيه",
+    "english": "الانجليزيه",
+    "dark": "الداكن",
+    "light": "الفاتح",
+    "add_new_task": "اضافه مهمه جديده",
+    "please_enter_task_title": "من فضلك ادخل عنوان مهمتك",
+    "please_enter_task_description": "من فضلك ادخل وصف مهمتك",
+    "added_succefully" : "تم الاضافه بنجاح",
+    "loading": "تحميل",
+    "are_you_sure_delet": "هل انت متاكد انك تريد حذف هذه المهمه",
+    "cancle": "غلق",
+    "yes": "حسنا",
+    "delet": "حذف"
+
+}
