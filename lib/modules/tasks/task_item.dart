@@ -4,6 +4,8 @@ import 'package:todo_c6_online/models/task_model.dart';
 import 'package:todo_c6_online/shared/components/components.dart';
 import 'package:todo_c6_online/shared/styles/my_theme.dart';
 import 'package:todo_c6_online/utils/add_task_firebase.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 
 class TaskItem extends StatefulWidget {
   TaskModel taskModel;
@@ -35,19 +37,19 @@ class _TaskItemState extends State<TaskItem> {
               showLoading(context, 'Loading...');
               showMessage(
                   context,
-                  'Are you Sure to want delete this task',
-                  'YES',
+                  AppLocalizations.of(context)?.are_you_sure_delet??'',
+                  AppLocalizations.of(context)?.yes??'',
                   () {
                     deleteTask();
                     _navigator.pop();
                   },
-                  NegActionName: 'Cancel',
+                  NegActionName: AppLocalizations.of(context)?.cancle,
                   NegActionCallBack: () {
                     _navigator.pop();
                     hideLoadingDialog(context);
                   });
             },
-            label: 'Delete',
+            label: AppLocalizations.of(context)?.delet,
             backgroundColor: Theme.of(context).colorScheme.error,
             icon: Icons.delete,
           ),

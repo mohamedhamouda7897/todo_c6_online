@@ -1,0 +1,22 @@
+{
+    "title": "Title your task",
+    "description": "Description",
+    "select_time": "Select time",
+    "add_task": "Add task",
+    "language": "Language",
+    "theme": "Theme",
+    "arabic": "Arabic",
+    "english": "English",
+    "dark": "Dark",
+    "light": "Light",
+    "add_new_task": "Add new task",
+    "please_enter_task_title": "Please enter task title",
+    "please_enter_task_description": "Please enter task description",
+    "added_succefully" : "Added succesfully",
+    "loading": "Loading",
+    "are_you_sure_delet": "Are you sure to want delet this task",
+    "cancle": "Cancle",
+    "yes": "OK",
+    "delet": "Delete"
+
+}
